@@ -5,11 +5,11 @@
 class Qiitrans < Formula
   desc "Yet another task management tool."
   homepage "https://github.com/Qithub-BOT/QiiTrans/"
-  version "1.0.0-RC3"
+  version "1.0.0-RC4"
 
   on_macos do
-    url "https://github.com/Qithub-BOT/QiiTrans/releases/download/v1.0.0-RC3/QiiTrans_1.0.0-RC3_macOS_all.zip", :using => CurlDownloadStrategy
-    sha256 "55fc5a995ac42d97e600f4e262e8ab0a13e6075daa2223f26d857be7b971fdad"
+    url "https://github.com/Qithub-BOT/QiiTrans/releases/download/v1.0.0-RC4/QiiTrans_1.0.0-RC4_macOS_all.zip", :using => CurlDownloadStrategy
+    sha256 "186501fa6842f83b503ea643c0dafcc909c1120a1351bf53c78cd0c2d2ed07d7"
 
     def install
       bin.install "qiitrans"
@@ -17,25 +17,25 @@ class Qiitrans < Formula
   end
 
   on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/Qithub-BOT/QiiTrans/releases/download/v1.0.0-RC4/QiiTrans_1.0.0-RC4_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "464cb8cb8db8435dc569971b3bfa2c054f1e052a8cafae6c8f0fe5ede499b221"
+
+      def install
+        bin.install "qiitrans"
+      end
+    end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/Qithub-BOT/QiiTrans/releases/download/v1.0.0-RC3/QiiTrans_1.0.0-RC3_Linux_armv6.tar.gz", :using => CurlDownloadStrategy
-      sha256 "40b47649ebf308e41217013f1b9131a040ec6c42db4e22c264b33e817dd4c022"
+      url "https://github.com/Qithub-BOT/QiiTrans/releases/download/v1.0.0-RC4/QiiTrans_1.0.0-RC4_Linux_armv6.tar.gz", :using => CurlDownloadStrategy
+      sha256 "05c191751e8e73e8df95ef94d349ad3062df6eabebdd33030dd87ea97091b93d"
 
       def install
         bin.install "qiitrans"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Qithub-BOT/QiiTrans/releases/download/v1.0.0-RC3/QiiTrans_1.0.0-RC3_Linux_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "5cfa6d542845e461c5351b4fc6e18212d336bf528ef5c85d78fe8d472be2c5ed"
-
-      def install
-        bin.install "qiitrans"
-      end
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/Qithub-BOT/QiiTrans/releases/download/v1.0.0-RC3/QiiTrans_1.0.0-RC3_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "a60806a632a9e661e411800dfcfb1aa8a15b9273463efe713614bc9f51b66bbd"
+      url "https://github.com/Qithub-BOT/QiiTrans/releases/download/v1.0.0-RC4/QiiTrans_1.0.0-RC4_Linux_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "0bd95de9316df508095c0bebf4f4b49fcd122cee3d44c423058c3e880a306518"
 
       def install
         bin.install "qiitrans"
