@@ -5,11 +5,11 @@
 class Qiitan < Formula
   desc "This is a sample app of github.com/Qithub-BOT/Qiitan-go. It simply prints 'Hello, Gopher!'."
   homepage "https://github.com/Qithub-BOT/Qiitan-go/"
-  version "0.0.0-beta"
+  version "0.0.0-beta2"
 
   on_macos do
-    url "https://github.com/Qithub-BOT/Qiitan-go/releases/download/v0.0.0-beta/Qiitan-go_0.0.0-beta_macOS_all.zip", :using => CurlDownloadStrategy
-    sha256 "6bdffdbc26887e4a0cb9a963056d2531ea8432fb35bf5d0ca2256fbad08d88cd"
+    url "https://github.com/Qithub-BOT/Qiitan-go/releases/download/v0.0.0-beta2/Qiitan-go_0.0.0-beta2_macOS_all.zip", :using => CurlDownloadStrategy
+    sha256 "598550cd256df255dfe50a5c46340eb740dc7cdb29e24ce553bb1ea1d31d7d23"
 
     def install
       bin.install "qiitan"
@@ -17,25 +17,25 @@ class Qiitan < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Qithub-BOT/Qiitan-go/releases/download/v0.0.0-beta/Qiitan-go_0.0.0-beta_Linux_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "529f6c61b5765d008ec4b9ca171f9593b5a3bc0ed59eaeee8ccdeb9f6498a335"
-
-      def install
-        bin.install "qiitan"
-      end
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/Qithub-BOT/Qiitan-go/releases/download/v0.0.0-beta/Qiitan-go_0.0.0-beta_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "b92b49d68e1b06e1b1bbb1759505a9acc3e86278100c87fa60b52bb8fc2510a8"
+      url "https://github.com/Qithub-BOT/Qiitan-go/releases/download/v0.0.0-beta2/Qiitan-go_0.0.0-beta2_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "19865d1f9f1b96efdccefdf6c966b5a846da1aadbd1f0c5b833e51019bdf9a0e"
 
       def install
         bin.install "qiitan"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/Qithub-BOT/Qiitan-go/releases/download/v0.0.0-beta/Qiitan-go_0.0.0-beta_Linux_armv6.tar.gz", :using => CurlDownloadStrategy
-      sha256 "d6f43b3098989a59fc96c748bee86cd32ee0764d7a30fd3d37d061e1d4c99301"
+      url "https://github.com/Qithub-BOT/Qiitan-go/releases/download/v0.0.0-beta2/Qiitan-go_0.0.0-beta2_Linux_armv6.tar.gz", :using => CurlDownloadStrategy
+      sha256 "eec7f52e7fbf6f4755781893cb5515b88f782120b8043635c9180a8c8f441519"
+
+      def install
+        bin.install "qiitan"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Qithub-BOT/Qiitan-go/releases/download/v0.0.0-beta2/Qiitan-go_0.0.0-beta2_Linux_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "050b0abf66190ca0300b302099222096b3104c86f0f3a9262f0ba47ba4813bd1"
 
       def install
         bin.install "qiitan"
