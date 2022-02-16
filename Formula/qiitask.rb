@@ -5,11 +5,11 @@
 class Qiitask < Formula
   desc "Yet another task management tool."
   homepage "https://github.com/Qithub-BOT/QiiTask/"
-  version "0.0.5"
+  version "0.0.6"
 
   on_macos do
-    url "https://github.com/Qithub-BOT/QiiTask/releases/download/v0.0.5/QiiTask_0.0.5_macOS_all.zip", :using => CurlDownloadStrategy
-    sha256 "057f898e96cf69b39a5b99862cd5fc7fe005915c0dc0d20c2408c61ee687b214"
+    url "https://github.com/Qithub-BOT/QiiTask/releases/download/v0.0.6/QiiTask_0.0.6_macOS_all.zip", :using => CurlDownloadStrategy
+    sha256 "5fd6e856e268e7bcbe8b03675e6b3578a176e09abfaebfa76b065e7a3c56ff99"
 
     def install
       bin.install "qiitask"
@@ -18,24 +18,24 @@ class Qiitask < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/Qithub-BOT/QiiTask/releases/download/v0.0.5/QiiTask_0.0.5_Linux_armv6.tar.gz", :using => CurlDownloadStrategy
-      sha256 "706acceef2ae8f3c58ab493dbba4af93e53d5cad04813ed8ef844fefb06fe759"
+      url "https://github.com/Qithub-BOT/QiiTask/releases/download/v0.0.6/QiiTask_0.0.6_Linux_armv6.tar.gz", :using => CurlDownloadStrategy
+      sha256 "7bb6d5544d5e3f58b578db7900d36bd15e1d60f46bcd7f043dc474a7881d8ced"
 
       def install
         bin.install "qiitask"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Qithub-BOT/QiiTask/releases/download/v0.0.5/QiiTask_0.0.5_Linux_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "6bc82cca76cd1471ff454acd5fee6d62100ece5a10e749a33d982c5e4aa462c9"
+      url "https://github.com/Qithub-BOT/QiiTask/releases/download/v0.0.6/QiiTask_0.0.6_Linux_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "e92f075da3a8b09dd5360c0522bd6dcbc6ee5f3c99c103afe56f46936e8c6ded"
 
       def install
         bin.install "qiitask"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Qithub-BOT/QiiTask/releases/download/v0.0.5/QiiTask_0.0.5_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "d84c79cc4c1706dd4edac22c4aa599a8a66a10442c43ebdcd4947e30c1552d6f"
+      url "https://github.com/Qithub-BOT/QiiTask/releases/download/v0.0.6/QiiTask_0.0.6_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "1a143a42ebe5a8f7b36924d4705d56d3501d89f4b21ec4965404344800993b66"
 
       def install
         bin.install "qiitask"
